@@ -1,29 +1,28 @@
 
-class School
-{
-  constructor(Name)
-  {
-    this.Name=Name;
+class Person {
+  constructor(name) {
+    this.name = name;
   }
-  greet()
-  {
-    console.log(`Hello ${this.Name}`);
+  greet() {
+    console.log(`Hello ${this.name}!`);
   }
 }
-class College extends School
-{
-  constructor(Name,Cname)
-  {
-    super(Name);
-    this.Cname=Cname;
+
+class Student extends Person {
+  constructor(name, level) {
+    super(name);
+    this.level = level;
   }
-  greet()
-  {
-    console.log(`${ this.Name}my college name is ${this.Cname}`);
+  greet() {
+    console.log(`Hello ${this.name} from ${this.level}`);
   }
 }
-const o1=new School("rutuj Shahare");
-const o2=new College('rahul shahare',"GHRCEM");
+
+const o1 = new Person("Max");
+const o2 = new Student("Tina", "1st Grade");
+const o3 = new Student("Mary", "2nd Grade");
+o3.greet = () => console.log('I am special!');
 
 o1.greet();
 o2.greet();
+o3.greet();
